@@ -14,7 +14,10 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/txtLojasTitulo" />
+            android:text="@string/txtLojasTitulo"
+            android:layout_marginTop="20dp"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
@@ -38,13 +41,17 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@id/relativeLojasTitulo" >
+        android:layout_below="@id/relativeLojasTitulo"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp">
 
         <TextView
             android:id="@+id/txtdt1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/txtDataSexta" />
+            android:text="@string/txtDataSexta"
+            android:textStyle="bold"
+            android:textColor="#ff0000" />
 
         <TextView
             android:id="@+id/txtdt2"
@@ -52,7 +59,9 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:text="@string/txtDataSegunda" />
+            android:text="@string/txtDataSegunda"
+            android:textStyle="bold"
+            android:textColor="#ff0000" />
 
     </RelativeLayout>
 

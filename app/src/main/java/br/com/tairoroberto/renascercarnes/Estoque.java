@@ -138,7 +138,13 @@ public class Estoque extends Activity {
 		 expList = (ExpandableListView) findViewById(R.id.expListProdutos);
 		 txtDataPedidoSexta = (TextView) findViewById(R.id.txtDataSexta);
 		 txtDataPedidoSegunda = (TextView)findViewById(R.id.txtDataSegunda);
-		 
+
+
+        //verifica de tem uma instancia de onsaveInstaneState
+        if (savedInstanceState != null){
+            txtDataPedidoSexta.setText(savedInstanceState.getString("dataSexta"));
+            txtDataPedidoSegunda.setText(savedInstanceState.getString("dataSegunda"));
+        }
 		
 		/**********************************************************************************/
 		/** 					 Pega o nome da loja que foi escolhida					 */
@@ -220,9 +226,14 @@ public class Estoque extends Activity {
 		expList.setAdapter(adapter);
 		
 	}
-	
-	
-	
+
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("dataSexta",txtDataPedidoSexta.getText().toString());
+        outState.putString("dataSegunda",txtDataPedidoSegunda.getText().toString());
+    }
 	
 	
 	/**********************************************************************************/

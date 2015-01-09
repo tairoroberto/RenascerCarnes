@@ -3,8 +3,12 @@ package br.com.tairoroberto.renascercarnes;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.util.Log;
+import android.view.Display;
 import android.view.Menu;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -23,20 +27,24 @@ public class Login extends Activity {
 		edtLogin = (EditText) findViewById(R.id.edtLogin);
 		edtSenha = (EditText) findViewById(R.id.edtSenha);
 
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+
+
 		btnEntrar.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
+            @Override
+            public void onClick(View v) {
 
-				if (edtLogin.getText().toString().equals("")
-						&& edtSenha.getText().toString().equals("")) {
-					Intent intent = new Intent(Login.this, Lojas.class);
-					Login.this.startActivity(intent);
-					Login.this.finish();
+                if (edtLogin.getText().toString().equals("")
+                        && edtSenha.getText().toString().equals("")) {
+                    Intent intent = new Intent(Login.this, Lojas.class);
+                    Login.this.startActivity(intent);
+                    Login.this.finish();
 
-				}
+                }
 
-			}
-		});
+            }
+        });
 
 	}
 

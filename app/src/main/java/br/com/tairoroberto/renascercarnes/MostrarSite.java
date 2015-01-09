@@ -24,7 +24,7 @@ public class MostrarSite extends Activity {
 		setContentView(R.layout.ver_site_produtos);
 		
 		site = (WebView)findViewById(R.id.webView1);
-		String url = "http://renascercarnes.comeze.com/pagina/consultaEstoque.html";
+		String url = "http://www.tairoroberto.kinghost.net/pagina";
 		
 		site.getSettings().setJavaScriptEnabled(true);
 		site.getSettings().setSupportZoom(true);

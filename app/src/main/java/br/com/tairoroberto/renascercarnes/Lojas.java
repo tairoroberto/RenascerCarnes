@@ -40,6 +40,12 @@ public class Lojas extends Activity {
 		txtdt1 = (TextView) findViewById(R.id.txtdt1);
 		txtdt2 = (TextView) findViewById(R.id.txtdt2);
 
+        //verifica de tem uma instancia de onsaveInstaneState
+        if (savedInstanceState != null){
+            txtdt1.setText(savedInstanceState.getString("dataSexta"));
+            txtdt2.setText(savedInstanceState.getString("dataSegunda"));
+        }
+
 		listaLojas.setAdapter(adapter);
 		
 		/************************************************************************************/
@@ -95,8 +101,15 @@ public class Lojas extends Activity {
 
 	}
 
-	
-	/**********************************************************************************/
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("dataSexta",txtdt1.getText().toString());
+        outState.putString("dataSegunda",txtdt2.getText().toString());
+    }
+
+
+    /**********************************************************************************/
 	/**						Método chamado para criar o MENU						 */
 	/********************************************************************************/
 	@Override

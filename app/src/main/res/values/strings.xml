@@ -3,7 +3,7 @@
 
     <string name="app_name">Renascer Carnes</string>
     <string name="hello_world">Hello world!</string>
-    <string name="txtLogin">Login</string>
+    <string name="txtLogin">Usuário</string>
     <string name="txtSenha">Senha</string>
     <string name="btnEntrar">Entrar</string>
     <string name="btnEnviar">Enviar</string>

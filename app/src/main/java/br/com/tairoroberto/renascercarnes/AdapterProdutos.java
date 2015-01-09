@@ -3,6 +3,7 @@ package br.com.tairoroberto.renascercarnes;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
@@ -260,7 +261,15 @@ public class AdapterProdutos extends BaseExpandableListAdapter {
 		texto.setText(fornecedores[groupPosition]);
 		texto.setPadding(60, 20, 0, 0);
 		texto.setTextColor(Color.RED);
-		texto.setTextSize(32);
+
+        if ((activity.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_NORMAL) {
+            texto.setTextSize(22);
+        }else  if ((activity.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_LARGE) {
+            texto.setTextSize(24);
+        }else  if ((activity.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_XLARGE) {
+            texto.setTextSize(28);
+        }
+
 		texto.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
 
 		return texto; // retorna o nome do
@@ -397,8 +406,14 @@ public class AdapterProdutos extends BaseExpandableListAdapter {
 		*************************** ********************************************************/
 		
 		holder.nomeProduto.setText(produto.getNome());
+        if ((activity.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_NORMAL) {
+            holder.nomeProduto.setTextSize(18);
+        }else  if ((activity.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_LARGE) {
+            holder.nomeProduto.setTextSize(24);
+        }else  if ((activity.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_XLARGE) {
+            holder.nomeProduto.setTextSize(28);
+        }
 		holder.nomeProduto.setPadding(20, 10, 0, 0);
-		holder.nomeProduto.setTextSize(28);
 		holder.nomeProduto.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
 		
 		

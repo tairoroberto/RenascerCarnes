@@ -1,6 +1,7 @@
 package br.com.tairoroberto.renascercarnes;
 
 import android.app.Activity;
+import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,7 @@ public class AdapterLojas extends BaseExpandableListAdapter {
 	/************************************************************************************
 	*	 					Array com os supervisores do grupo renasce					*
 	*************************** ********************************************************/
-	public String[] supervisor = new String[] { "Robson", "Alexandre", "Amario" };
+	public String[] supervisor = new String[] { "Lojas da Zona Norte", "Lojas da Zona Leste", "Lojas do Centro" };
 
 
 	/************************************************************************************
@@ -52,7 +53,14 @@ public class AdapterLojas extends BaseExpandableListAdapter {
 		TextView texto = new TextView(this.activity);
 		texto.setText(lojasRenascer[groupPosition][childPosition]);
 		texto.setPadding(80, 10, 0, 0);
-		texto.setTextSize(26);
+
+        if ((activity.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_NORMAL) {
+            texto.setTextSize(22);
+        }else  if ((activity.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_LARGE) {
+            texto.setTextSize(24);
+        }else  if ((activity.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_XLARGE) {
+            texto.setTextSize(26);
+        }
 		return texto; // retorna o nome da loja
 	}
 
@@ -83,7 +91,14 @@ public class AdapterLojas extends BaseExpandableListAdapter {
 		TextView texto = new TextView(this.activity);
 		texto.setText(supervisor[groupPosition]);
 		texto.setPadding(60, 20, 0, 0);
-		texto.setTextSize(28);
+
+        if ((activity.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_NORMAL) {
+            texto.setTextSize(24);
+        }else  if ((activity.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_LARGE) {
+            texto.setTextSize(26);
+        }else  if ((activity.getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK) == Configuration.SCREENLAYOUT_SIZE_XLARGE) {
+            texto.setTextSize(28);
+        }
 		texto.setTypeface(Typeface.DEFAULT, Typeface.BOLD);
 
 		return texto; // retorna o nome do supervisor
