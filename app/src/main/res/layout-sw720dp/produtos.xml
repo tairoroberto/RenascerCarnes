@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Spinner
+        android:id="@+id/spinnerLayoutTipo"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/spinnerLayoutQuantidade"
+        android:layout_alignTop="@+id/spinnerLayoutQuantidade"
+        android:layout_toRightOf="@+id/spinnerLayoutQuantidade"
+        android:layout_weight="0.01" />
+
+    <CheckBox
+        android:id="@+id/checkSexta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="Sexta" />
+
+    <CheckBox
+        android:id="@+id/checkSegunda"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="Segunda" />
+
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/checkSexta" >
+
+        <TextView
+            android:id="@+id/txtLayoutProduto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="@string/produto" />
+
+    </RelativeLayout>
+
+    <Spinner
+        android:id="@+id/spinnerLayoutQuantidade"
+        android:layout_width="70dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayout1"
+        android:layout_weight="0.01" />
+
+    <Spinner
+        android:id="@+id/spinnerLayoutQuantidade2"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/spinnerLayoutTipo"
+        android:layout_alignTop="@+id/spinnerLayoutTipo"
+        android:layout_toLeftOf="@+id/spinnerLayoutTipo2" />
+
+    <Spinner
+        android:id="@+id/spinnerLayoutTipo2"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/spinnerLayoutQuantidade2"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/spinnerLayoutQuantidade2" />
+
+</RelativeLayout>
